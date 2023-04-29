@@ -22,12 +22,19 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    /*
+    I added this two lines to solve this problem that faces me at video No.11
+Error: src/app/services/housing.service.ts:20:32 - error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'Object'.
+    */
+    "ignoreDeprecations": "5.0",
+    "suppressImplicitAnyIndexErrors": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+
+  },
 }

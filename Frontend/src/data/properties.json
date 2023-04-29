@@ -1,0 +1,38 @@
+[
+  {
+    "Id":1,
+    "Name":"First House",
+    "Type":"House",
+    "Price":10000
+  },
+  {
+    "Id":2,
+    "Name":"Second House",
+    "Type":"House",
+    "Price":20000
+  },
+  {
+    "Id":3,
+    "Name":"Third House",
+    "Type":"House",
+    "Price":30000
+  },
+  {
+    "Id":4,
+    "Name":"Fourth House",
+    "Type":"House",
+    "Price":40000
+  },
+  {
+    "Id":5,
+    "Name":"Fifth House",
+    "Type":"House",
+    "Price":50000
+  },
+  {
+    "Id":6,
+    "Name":"Sixth House",
+    "Type":"House",
+    "Price":60000
+  }
+]
