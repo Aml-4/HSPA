@@ -7,17 +7,28 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PropertyCardComponent } from './property/property-card/property-card.component';
 import { PropertyListComponent } from './property/property-list/property-list.component';
 import { HttpClientModule} from '@angular/common/http'
+import { AddPropertyComponent } from './property/add-property/add-property.component';
+import { PropertyDetailsComponent } from './property/property-details/property-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserRegisterComponent } from './user/user-register/user-register.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     PropertyCardComponent,
-    PropertyListComponent
+    PropertyListComponent,
+    AddPropertyComponent,
+    PropertyDetailsComponent,
+    UserLoginComponent,
+    UserRegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

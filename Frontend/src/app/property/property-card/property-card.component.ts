@@ -9,6 +9,7 @@ import { IProperty } from '../IProperty.interface';
 export class PropertyCardComponent implements OnInit {
   @Input() property:IProperty={
     Id:0,
+    SellRent:0,
     Name:'',
     Type:'',
     Price:0

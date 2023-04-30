@@ -1,0 +1,19 @@
+<p>
+The Selected Id is {{propertyId}}
+</p>
+<br/><br/><br/>
+<button (click)="SelectNextProperty();" class="btn btn-primary">Select Next</button>
+<br/><br/><br/>
+
+<button routerLink="/property-details/1" class="btn btn-primary">1</button>
+<button routerLink="/property-details/2" class="btn btn-primary">2</button>
+<button routerLink="/property-details/3" class="btn btn-primary">3</button>
+<!--
+   We must not forget / before component name to consider the path as absolute path , but if we forget the /
+   the url will be considered as relative path and it will be like this 'property-details/3/property-details/3' and that's wrong,
+   But with using  'this.router.navigate(['property-details/',this.propertyId])' => navigate property doesn't need to use /
+   as by default it consider the pathe as absolute path And if we Need to use it as relative path we have to pass another parameter to
+   the navigate function 'this.router.navigate(['property-details/',this.propertyId],{relativeTo:this.route})'
+-->
+<button [routerLink]="['/property-details','4']" class="btn btn-primary">4</button>
+

@@ -1,0 +1,32 @@
+ <!-- <button class="btn btn-primary" (click)="onBack()"> Back </button> -->
+<div class="card">
+  <div class="card-header">
+    Add New Property
+  </div>
+  <!-- Declare Template Variable using # -->
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit(Form)" #Form="ngForm">
+      <div class="form-group col-12">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" #PropName="ngModel" ngModel name="Name" required minlength="5" >
+        <span *ngIf="!PropName.valid &&  FrmErrorSubmit" class="error" >
+          <span *ngIf="PropName.errors?.['required']"  > Please Enter a Name </span>
+          <span *ngIf="PropName.errors?.['minlength']"> You Must Enter at least 5 chars </span>
+
+        </span>
+      </div>
+      <div class="form-group col-12">
+        <label for="Type">Type</label>
+        <input type="text" class="form-control" ngModel name="Type">
+      </div>
+      <div class="form-group col-12">
+        <label for="Price">Price</label>
+        <input type="text" class="form-control" ngModel name="Price">
+      </div>
+      <div class="form-group col-12">
+          <button class="btn btn-primary m-2" type="submit"> Save   </button>
+          <button class="btn btn-primary" type="reset">  Cancel </button>
+      </div>
+    </form>
+  </div>
+</div>
