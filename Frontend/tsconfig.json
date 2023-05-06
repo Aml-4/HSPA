@@ -23,6 +23,10 @@
       "ES2022",
       "dom"
     ],
+    "typeRoots": [
+      "node_modules/@types",
+      "src/alertfytype.d.ts"
+    ],
     /*
     I added this two lines to solve this problem that faces me at video No.11
 Error: src/app/services/housing.service.ts:20:32 - error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'Object'.

@@ -9,7 +9,7 @@
         <div class="form-group col-12">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" formControlName="UserName">
-            <span *ngIf="!UserName?.valid && UserName?.touched" class="error">
+            <span *ngIf="!UserName?.valid && (UserName?.touched || FormErrorSubmit)" class="error">
               Please Enter Your UserName
             </span>
         </div>
@@ -17,7 +17,7 @@
         <div class="form-group col-12">
           <label for="email" class="form-label">Email</label>
           <input type="text" class="form-control" formControlName="Email">
-          <span *ngIf="!Email?.valid && Email?.touched" class="error">
+          <span *ngIf="!Email?.valid && (Email?.touched || FormErrorSubmit)" class="error">
             <span *ngIf="Email?.hasError('required')"> Please Enter Your Email</span>
             <span *ngIf="Email?.hasError('email')"> Please Enter A Valid Email</span>
           </span>
@@ -26,7 +26,7 @@
         <div class="form-group col-12">
           <label for="passwrod" class="form-label">Password</label>
           <input type="password" class="form-control" formControlName="Password">
-          <span *ngIf="!Password?.valid && Password?.touched" class="error">
+          <span *ngIf="!Password?.valid && (Password?.touched || FormErrorSubmit)" class="error">
             <span *ngIf="Password?.errors?.['required']"> Please Enter A Password</span>
             <span *ngIf="Password?.errors?.['minlength']"> Your Password Must be 8 characters at least</span>
           </span>
@@ -35,7 +35,7 @@
         <div class="form-group col-12">
           <label for="cpassword" class="form-label">Confirm Password</label>
           <input type="password" class="form-control" formControlName="ConfirmPassword">
-          <span *ngIf="!ConfirmPassword?.valid && ConfirmPassword?.touched" class="error">
+          <span *ngIf="!ConfirmPassword?.valid && (ConfirmPassword?.touched || FormErrorSubmit)" class="error">
             <span *ngIf="ConfirmPassword?.errors?.['required']"> Please Enter A Password</span>
           </span>
           <span *ngIf="registrationForm?.errors?.['NotMatched'] && ConfirmPassword?.valid" class="error" >
@@ -47,15 +47,16 @@
         <div class="form-group col-12">
           <label for="mobile" class="form-label">Mobile</label>
           <input type="text" class="form-control" formControlName="Mobile" >
-          <span *ngIf="!Mobile?.valid && Mobile?.touched" class="error">
+          <span *ngIf="!Mobile?.valid && (Mobile?.touched || FormErrorSubmit)" class="error">
             <span *ngIf="Mobile?.errors?.['required']"> Please Enter A Mobile Phone</span>
+            <span *ngIf="Mobile?.errors?.['min']"> Min Number Is 0</span>
             <span *ngIf="Mobile?.errors?.['maxlength']"> Your Mobile Phone Must be 10 numbers </span>
             <span *ngIf="Mobile?.errors?.['minlength']"> Your Mobile Phone Must be 10 numbers </span>
-
           </span>
         </div>
 
         <div class="form-group col-12">
+          <!-- <button [disabled]="!registrationForm.valid" type="submit" class="btn btn-primary">Save</button> -->
           <button type="submit" class="btn btn-primary">Save</button>
           <button type="button" class="btn btn-secondary m-2">Cancel</button>
         </div>

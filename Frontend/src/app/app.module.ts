@@ -12,6 +12,8 @@ import { PropertyDetailsComponent } from './property/property-details/property-d
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { HousingService } from './services/housing.service';
+import { UserServiceService } from './services/user-service.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,10 @@ import { UserRegisterComponent } from './user/user-register/user-register.compon
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    HousingService,
+    UserServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
