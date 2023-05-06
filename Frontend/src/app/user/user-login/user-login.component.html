@@ -1,3 +1,25 @@
-<p>
-  user-login works!
-</p>
+<div class="row">
+  <div class="col-6 m-auto">
+    <div class="card m-auto">
+      <div class="card-header">
+        Add form heading here
+      </div>
+      <div class="card-body">
+        <form #loginform="ngForm" (ngSubmit)="onLogin(loginform)">
+          <div class="form-group col-12">
+            <label for="">Name</label>
+            <input type="text" class="form-control" ngModel name="userName" required="">
+          </div>
+          <div class="form-group col-12">
+            <label for="">Password</label>
+            <input type="password" class="form-control"ngModel name="password" required="">
+          </div>
+          <div class="form-group col-12">
+            <button [disabled]="!loginform.valid" class="btn btn-primary" type="submit">Login</button>
+            <button class="btn btn-secondary ml-2" type="button">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

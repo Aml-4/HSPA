@@ -11,10 +11,15 @@ import { AddPropertyComponent } from './property/add-property/add-property.compo
 import { PropertyDetailsComponent } from './property/property-details/property-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user/user-login/user-login.component';
-import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { HousingService } from './services/housing.service';
 import { UserServiceService } from './services/user-service.service';
+import { AlertfiyService } from './services/alertfiy.service';
+import { AuthService } from './services/auth.service';
+import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule} from 'ngx-bootstrap/dropdown'
 @NgModule({
+
   declarations: [
     AppComponent,
     NavBarComponent,
@@ -30,11 +35,15 @@ import { UserServiceService } from './services/user-service.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
   ],
   providers: [
     HousingService,
-    UserServiceService
+    UserServiceService,
+    AlertfiyService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
