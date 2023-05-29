@@ -3,6 +3,7 @@ import {FormGroup, FormControl, Validators, ValidationErrors, AbstractControl, F
 import { User } from 'src/app/models/user';
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { AlertfiyService } from 'src/app/services/alertfiy.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
@@ -12,7 +13,7 @@ export class UserRegisterComponent implements OnInit {
   registrationForm !:FormGroup;
   _User !: User;
   FormErrorSubmit:boolean=false;
-  constructor(private fb:FormBuilder, private userService:UserServiceService, private alertifyservice:AlertfiyService) { }
+  constructor(private fb:FormBuilder, private userService:UserServiceService, private alertifyservice:AlertfiyService, private route:Router) { }
  /* Reactive Forms => Works Sync And that's what make them predictable
     while Template Driven Forms => Works ASync and that's what make them unpredictable
  */
@@ -77,6 +78,7 @@ export class UserRegisterComponent implements OnInit {
       this.registrationForm.reset();
       this.FormErrorSubmit=false;
       this.alertifyservice.success("Congrats, You successfully Registered")
+      this.route.navigate(['user/Login'])
     }else{
       this.alertifyservice.error("Kindly provide the required data")
 
